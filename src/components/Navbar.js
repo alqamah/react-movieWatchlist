@@ -9,7 +9,7 @@ const Navbar = () => {
       <div className="navbar-brand">
         <Link to="/" className="navbar-logo">
           <img src={appLogo} alt="App Logo" />
-          <span>Movie Watchlist</span>
+          <span className='app-header'>Movie Watchlist</span>
         </Link>
       </div>
       <ul className="navbar-nav">

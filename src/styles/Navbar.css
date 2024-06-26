@@ -9,7 +9,18 @@
   padding: 1rem;
   padding-right: 2rem;
   border-radius: 50px;
+  transition: .2s;
+  border: solid 2px rgba(0, 0, 0, 0.625);
+  font-family: "Playfair Display", serif;
 }
+.app-header{
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  padding-left: 10px;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.479);
+  font-weight: 500;
+}
+
 
 .navbar-brand {
   display: flex;

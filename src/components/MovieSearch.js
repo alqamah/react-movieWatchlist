@@ -83,7 +83,7 @@ function MovieSearch() {
           onChange={(e) => setSearchValue(e.target.value)}
         />
         <button onClick={handleSearch}>Search</button>
-        <button onClick={clearSearch}>Clear Search</button>
+        <button onClick={clearSearch}>Clear</button>
       </div>
       {searchResults && searchResults.length > 0 ? (
         searchResults.map((movie, index) => (
@@ -91,7 +91,7 @@ function MovieSearch() {
             <h3>{movie.Title}</h3>
             <p>{movie.Plot || 'No description available'}</p>
             <p>Year: {movie.Year}</p>
-            <p>Genre: {movie.Genre?.join(', ') || 'Unknown'}</p>
+            <p>Genre: {movie.Type || 'Unknown'}</p>
             <button onClick={() => handleAddToWatchlist(movie)}>Add to Watchlist</button>
           </div>
         ))

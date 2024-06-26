@@ -5,9 +5,10 @@
 .search-container input{
   width: 80%;
   margin: 0;
-  
 }
 .search-container button{
   padding: 0 10px;
   margin: 0 3px;
+  width: 70px;
+  height: 32px;
 }
