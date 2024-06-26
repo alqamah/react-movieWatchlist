@@ -2,17 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Movie from './Movie';
 import MovieForm from './MovieForm';
-
-// const APIKEY = 'api_key=96c05c6f53c2f9b20b3e42af4887dc76';
-// const HOMEURL = `https://api.themoviedb.org/3/discover/movie?${APIKEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`;
- const HOMEURL = `http://www.omdbapi.com/?i=tt3896198&apikey=8eff6285`;
-
-
+import { getPopularMovies, searchMovies } from '../services/movieApi';
 
 function MovieList() {
   const movies = useSelector(state => state.movies.movies);
   const searchResults = useSelector(state => state.movies.searchResults);
   const [editingMovie, setEditingMovie] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [searchValue, setSearchValue] = useState('');
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -21,11 +19,33 @@ function MovieList() {
 
   const fetchPopularMovies = async () => {
     try {
-      const response = await fetch(HOMEURL);
-      const data = await response.json();
-      dispatch({ type: 'SET_SEARCH_RESULTS', payload: data.results });
+      setLoading(true);
+      setError(null);
+      const data = await getPopularMovies();
+      dispatch({ type: 'SET_SEARCH_RESULTS', payload: data });
     } catch (error) {
       console.error('Error fetching popular movies:', error);
+      setError('Failed to fetch movies. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSearch = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const data = await searchMovies(searchValue);
+      if (data.length === 0) {
+        setError('No movies found. Try a different search term.');
+      } else {
+        dispatch({ type: 'SET_SEARCH_RESULTS', payload: data });
+      }
+    } catch (error) {
+      console.error('Error searching movies:', error);
+      setError('Failed to search movies. Please try again later.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -37,17 +57,25 @@ function MovieList() {
     dispatch({
       type: 'ADD_MOVIE',
       payload: {
-        id: movie.id,
+        id: movie.imdbid,
         title: movie.title,
-        description: movie.overview,
-        releaseYear: new Date(movie.release_date).getFullYear(),
-        genre: movie.genre_ids.join(', '), // This is simplified, you might want to map genre_ids to actual genre names
+        description: movie.description || 'No description available',
+        releaseYear: movie.year,
+        genre: movie.genre?.join(', ') || 'Unknown',
         watched: false,
         rating: 0,
         review: ''
       }
     });
   };
+
+  const clearSearch = () => {
+    setSearchValue('');
+    dispatch({ type: 'CLEAR_SEARCH_RESULTS' });
+  };
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
     <div>
@@ -59,17 +87,29 @@ function MovieList() {
           <Movie key={movie.id} movie={movie} onEdit={handleEdit} />
         ))
       )}
-      <h2>Search Results</h2>
+      <h2>Search Movies</h2>
+      <div>
+        <input
+          type="text"
+          placeholder="Search for a movie..."
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+        />
+        <button onClick={handleSearch}>Search</button>
+      </div>
+      <button onClick={clearSearch}>Clear Search</button>
       {searchResults && searchResults.length > 0 ? (
         searchResults.map(movie => (
-          <div key={movie.id} className="search-result">
+          <div key={movie.imdbid} className="search-result">
             <h3>{movie.title}</h3>
-            <p>{movie.overview}</p>
+            <p>{movie.description || 'No description available'}</p>
+            <p>Year: {movie.year}</p>
+            <p>Genre: {movie.genre?.join(', ') || 'Unknown'}</p>
             <button onClick={() => handleAddToWatchlist(movie)}>Add to Watchlist</button>
           </div>
         ))
       ) : (
-        <p>No search results available.</p>
+        <p>No movies available.</p>
       )}
     </div>
   );

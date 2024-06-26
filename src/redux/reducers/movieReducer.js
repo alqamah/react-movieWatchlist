@@ -48,6 +48,11 @@ const movieReducer = (state = initialState, action) => {
           ...state,
           searchResults: action.payload
         };
+        case 'CLEAR_SEARCH_RESULTS':
+          return {
+            ...state,
+            searchResults: []
+          };
     default:
       return state;
   }

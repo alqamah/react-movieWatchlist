@@ -6,7 +6,9 @@ function Movie({ movie, onEdit }) {
   const [review, setReview] = useState(movie.review);
 
   const handleDelete = () => {
-    dispatch({ type: 'DELETE_MOVIE', payload: movie.id });
+    if (window.confirm('Are you sure you want to delete this movie?')) {
+      dispatch({ type: 'DELETE_MOVIE', payload: movie.id });
+    }
   };
 
   const handleToggleWatched = () => {
