@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getPopularMovies, searchMovies } from '../services/movieApi';
+import '../styles/MovieSearch.css'
 
 function MovieSearch() {
   const searchResults = useSelector(state => state.movies.searchResults);
@@ -73,7 +74,7 @@ function MovieSearch() {
   return (
     <div>
       <h2>Search Movies</h2>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div className='search-container'>
         <input
           type="text"
           placeholder="Search for a movie..."
@@ -81,8 +82,8 @@ function MovieSearch() {
           onChange={(e) => setSearchValue(e.target.value)}
         />
         <button onClick={handleSearch}>Search</button>
+        <button onClick={clearSearch}>Clear Search</button>
       </div>
-      <button onClick={clearSearch}>Clear Search</button>
       {searchResults && searchResults.length > 0 ? (
         searchResults.map((movie, index) => (
           <div key={index} className="search-result">

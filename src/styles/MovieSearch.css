@@ -1,0 +1,13 @@
+.search-container{
+  display: flex;
+  padding: 10px 0;
+}
+.search-container input{
+  width: 80%;
+  margin: 0;
+  
+}
+.search-container button{
+  padding: 0 10px;
+  margin: 0 3px;
+}
