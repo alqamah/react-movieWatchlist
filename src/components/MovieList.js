@@ -31,6 +31,7 @@ function MovieList() {
   return (
     <div>
       <h2>My Watchlist</h2>
+      <h3>List of movies added to the watchlist</h3>
       {editingMovie ? (
         <MovieForm movie={editingMovie} onCancel={() => setEditingMovie(null)} />
       ) : (

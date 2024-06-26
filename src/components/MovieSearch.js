@@ -74,6 +74,7 @@ function MovieSearch() {
   return (
     <div>
       <h2>Search Movies</h2>
+      <h3>Search for any movie globally</h3>
       <div className='search-container'>
         <input
           type="text"
