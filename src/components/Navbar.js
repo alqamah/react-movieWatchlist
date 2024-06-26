@@ -23,6 +23,11 @@ const Navbar = () => {
             Watchlist
           </Link>
         </li>
+        <li className="nav-item">
+          <Link to="/explore" className="nav-link">
+            Explore Movies
+          </Link>
+        </li>
       </ul>
     </nav>
   );

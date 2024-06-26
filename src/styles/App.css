@@ -10,8 +10,9 @@ body {
   max-width: 800px;
   margin: 0 auto;
   background-color: white;
-  padding: 20px;
+  padding: 30px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 30px;
 }
 
 h1, h2 {
@@ -84,4 +85,8 @@ button:hover {
 
 .search-result h3 {
   margin-top: 0;
+}
+
+button {
+  margin: 2px;
 }
