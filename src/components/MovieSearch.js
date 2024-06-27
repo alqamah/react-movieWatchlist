@@ -83,7 +83,7 @@ function MovieSearch() {
           onChange={(e) => setSearchValue(e.target.value)}
         />
         <button onClick={handleSearch}>Search</button>
-        <button onClick={clearSearch}>Clear</button>
+        <button className='del-btn' onClick={clearSearch}>Clear</button>
       </div>
       {searchResults && searchResults.length > 0 ? (
         searchResults.map((movie, index) => (

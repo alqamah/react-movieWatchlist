@@ -25,25 +25,25 @@ function Movie({ movie, onEdit }) {
 
   return (
     <div className="movie-item">
-      <h3>{movie.title}</h3>
-      <p>{movie.description}</p>
-      <p>Release Year: {movie.releaseYear}</p>
-      <p>Genre: {movie.genre}</p>
-      <p>Watched: {movie.watched ? 'Yes' : 'No'}</p>
+      <h3 className='app-header'>{movie.title}</h3>
+      <p><b>{movie.description}</b></p>
+      <p>Release Year: <b>{movie.releaseYear}</b></p>
+      <p>Genre: <b>{movie.genre}</b></p>
+      <p>Watched: <b>{movie.watched ? 'Yes' : 'No'}</b></p>
       <div>
         Rating: 
         {[1, 2, 3, 4, 5].map(star => (
           <span 
             key={star} 
             onClick={() => handleRating(star)}
-            style={{cursor: 'pointer', color: star <= movie.rating ? 'gold' : 'gray'}}
+            style={{marginLeft: '3px',cursor: 'pointer', color: star <= movie.rating ? 'gold' : 'gray'}}
           >
             ★
           </span>
         ))}
       </div>
       <div>
-        <textarea 
+        <textarea style={{width: '97%', height: '100px', marginTop: '10px'}}
           value={review} 
           onChange={(e) => setReview(e.target.value)}
           placeholder="Write a review..."
@@ -51,7 +51,7 @@ function Movie({ movie, onEdit }) {
         <button onClick={handleReview}>Save Review</button>
       </div>
       <button onClick={() => onEdit(movie)}>Edit</button>
-      <button onClick={handleDelete}>Delete</button>
+      <button className='del-btn' onClick={handleDelete}>Delete</button>
       <button onClick={handleToggleWatched}>
         Mark as {movie.watched ? 'Unwatched' : 'Watched'}
       </button>

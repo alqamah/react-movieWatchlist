@@ -54,10 +54,18 @@ button {
   border-radius: 4px;
   cursor: pointer;
   margin-right: 10px;
+  border: solid 2px #303030;
+  transition: .2s;
 }
 
 button:hover {
-  background-color: #45a049;
+  /* background-color: #45a049; */
+  border: solid 2px #45a049;
+  background-color: white;
+  color: black;
+}
+.del-btn:hover{
+  border: solid 2px #e84545;  
 }
 
 .movie-item {
@@ -70,8 +78,6 @@ button:hover {
 .movie-item h3 {
   margin-top: 0;
 }
-
-/* ... previous styles ... */
 
 .search-bar {
   margin-bottom: 20px;
