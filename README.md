@@ -1,6 +1,4 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Live Link: https://react-moviewatchlist.onrender.com
 
 ## Available Scripts
 
@@ -32,13 +30,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-# Project Specification Document: Movie Watchlist Application
 
 ## Project Overview
 
@@ -121,21 +112,3 @@ The Movie Watchlist application is a web-based tool that allows users to manage 
 - Display movie details including title, description, release year, genre, watch status, rating, and reviews.
 - Options to edit or delete the movie, mark it as watched/unwatched, and add/edit a rating and review.
 
-Here are a few sources where you can find UI references for your Movie Watchlist application:
-
-- [Dribbble](https://dribbble.com/) and [Behance](https://www.behance.net/) for design inspiration.
-- [UI Movement](https://uimovement.com/) and [Awwwards](https://www.awwwards.com/) for curated UI design examples.
-
-## Hosting and Deployment
-
-- Candidates must host the completed application on a platform such as GitHub Pages, Vercel, Netlify, or any other hosting service of their choice.
-- The hosted application should be publicly accessible.
-
-## Deliverables
-
-- **Source Code:**
-    - Fully functional Movie Watchlist application source code.
-- **Hosted Application:**
-    - URL link to the hosted application.
-    - Ensure the application is publicly accessible and fully functional.
-- **Video Explanation:** Create a video of 2-3 minutes showing and explaining your work.

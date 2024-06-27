@@ -41,7 +41,7 @@ function MovieSearch() {
       }
     } catch (error) {
       console.error('Error searching movies:', error);
-      setError('Failed to search movies. Please try again later.');
+      setError('Failed to fetch movies from API. Please try again later.');
     } finally {
       setLoading(false);
     }
