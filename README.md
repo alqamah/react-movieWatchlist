@@ -1,35 +1,23 @@
-# Live Link: https://react-moviewatchlist.onrender.com
+## Live Link: https://react-moviewatchlist.onrender.com
 
-## Available Scripts
+## Video Explanation Link: https://youtu.be/7O3dojYf4FM
 
-In the project directory, you can run:
+**Note:** The live link takes a few minutes to load up on the first visit. This is because render.com spins down the server when not in use to conserve resources.
 
-### `npm start`
+## Local Setup
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**To run the project locally, follow these steps:**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository: `https://github.com/alqamah/react-movieWatchlist.git`
 
-### `npm test`
+2. Navigate to the project directory: `cd movie-watchlist`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Install the dependencies: `npm install`
 
-### `npm run build`
+4. Start the development server: `npm start`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. Open your browser and visit `http://localhost:3000` to view the application.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
 ## Project Overview
 
