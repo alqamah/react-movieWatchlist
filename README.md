@@ -1,8 +1,8 @@
-## Live Link: https://react-moviewatchlist.onrender.com
-
-## Video Explanation Link: https://youtu.be/7O3dojYf4FM
+# Live Link: https://react-moviewatchlist.onrender.com
 
 **Note:** The live link takes a few minutes to load up on the first visit. This is because render.com spins down the server when not in use to conserve resources.
+
+# Video Explanation Link: https://youtu.be/7O3dojYf4FM
 
 ## Local Setup
 
