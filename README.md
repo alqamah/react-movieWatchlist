@@ -39,6 +39,8 @@ The Movie Watchlist application is a web-based tool that allows users to manage 
     - Users can provide a text review for each movie.
 6. **State Management with Redux**
     - All state changes (adding, editing, deleting movies, marking as watched/unwatched, rating, and reviewing) will be managed using Redux.
+7. **Fetch Movies from API**
+    - Movies will be fetched from the [The Movie Database (TMDb)](https://www.themoviedb.org/) API.
 
 ## Functional Requirements
 
